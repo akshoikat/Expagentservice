@@ -1,0 +1,2666 @@
+{
+  "name": "Civilization VS",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f07682f3-5b2d-4578-8b89-5d718b1e1e0d",
+      "name": "Ecosystem Activation",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2848,
+        976
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "temperature",
+              "value": 72,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "humidity",
+              "value": 45,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "pressure",
+              "value": 1013,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0d75f6ad-27ec-407d-b534-8af0a24f419f",
+      "name": "Environment Sensor",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2256,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "numberInputs": 6
+      },
+      "id": "63168b49-3a9a-4491-821a-2afc8eaa9e29",
+      "name": "Environment State Collector",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -2176,
+        896
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "diskSpace",
+              "value": 85,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "bandwidth",
+              "value": 950,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "availability",
+              "value": 99.9,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "31f82ba2-eb0d-4741-ab38-ca32eaaabf4f",
+      "name": "Resource Scanner",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2432,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "cpuUsage",
+              "value": 42,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "cores",
+              "value": 8,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "frequency",
+              "value": 3.6,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1376dd98-f1fd-480e-9bd0-56c63f22591b",
+      "name": "CPU Monitor",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2448,
+        752
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "memoryUsed",
+              "value": 12.5,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "memoryTotal",
+              "value": 32,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "swapUsed",
+              "value": 0.5,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "80488a07-3a38-4c74-b2b9-b6d218e73d4c",
+      "name": "Memory Monitor",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2464,
+        976
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "latency",
+              "value": 15,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "packetLoss",
+              "value": 0.1,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "throughput",
+              "value": 980,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0cdf8a14-9597-4bdc-90f1-356ef206fdca",
+      "name": "Network Pressure Monitor",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2448,
+        1136
+      ]
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "environmentData",
+        "options": {}
+      },
+      "id": "78735459-cb2f-4bae-ad2e-3c322af50310",
+      "name": "Global Event Bus",
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -1984,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "adaptiveFormula",
+              "value": "f(x) = α·x + β·Δx + γ·∫x",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "coefficients",
+              "value": {
+                "alpha": 0.7,
+                "beta": 0.2,
+                "gamma": 0.1
+              },
+              "type": "object"
+            },
+            {
+              "id": "3",
+              "name": "optimizationScore",
+              "value": 0.89,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "14614a15-de1f-4d63-b852-d54eb328cc03",
+      "name": "Formula Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -160,
+        1728
+      ]
+    },
+    {
+      "parameters": {
+        "numberInputs": 6
+      },
+      "id": "7ccd7d6b-47a6-4a13-9116-8a571fbf47d5",
+      "name": "Global State Manager",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -1440,
+        816
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "decision",
+              "value": "optimize_resources",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "confidence",
+              "value": 0.92,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "alternatives",
+              "value": [
+                "scale_up",
+                "redistribute",
+                "maintain"
+              ],
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9ceb66f2-5563-4f72-9383-6e90c07afc63",
+      "name": "Dynamic Decision Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1760,
+        1504
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "neuralState",
+              "value": "learning",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "synapticStrength",
+              "value": 0.85,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "plasticity",
+              "value": 0.78,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "384ddf47-87ff-40ed-bd9c-b9c0a4a13c75",
+      "name": "Adaptive Brain",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1760,
+        704
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "contextType",
+              "value": "operational",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "relevanceScore",
+              "value": 0.88,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "timeWindow",
+              "value": "5m",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "291ff5e5-afb9-4d0b-8aee-3c9e102b2c75",
+      "name": "Context Analyzer",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1760,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "allocationStrategy",
+              "value": "dynamic",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "efficiency",
+              "value": 0.91,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "predictedDemand",
+              "value": "moderate",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ae4b849b-ed46-467d-82a6-e18327a409f0",
+      "name": "Resource Intelligence",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1760,
+        1104
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "automationLevel",
+              "value": "high",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "adaptationRate",
+              "value": 0.75,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "responseTime",
+              "value": "150ms",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8734f92e-2796-4575-8ba2-fc219503f1db",
+      "name": "Environment Adaptive Automation",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1760,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "agentType",
+              "value": "watcher",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "observationCount",
+              "value": 127,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "alertsRaised",
+              "value": 3,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d3dd99d6-71b1-49fb-bfda-1a0e7e825c0f",
+      "name": "Watcher Agent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1216,
+        656
+      ]
+    },
+    {
+      "parameters": {
+        "numberInputs": 8
+      },
+      "id": "83efcfe0-f53a-45df-808f-d915addea233",
+      "name": "Swarm Coordinator",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -880,
+        752
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "agentType",
+              "value": "hunter",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "targetsFound",
+              "value": 5,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "successRate",
+              "value": 0.94,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b5436bc3-3874-4a15-93c8-877041281a95",
+      "name": "Hunter Agent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1216,
+        816
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "agentType",
+              "value": "defense",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "threatsBlocked",
+              "value": 12,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "shieldStrength",
+              "value": 0.96,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f69a94cd-55c3-4799-80e4-c75da14338c4",
+      "name": "Defense Agent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1216,
+        464
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "agentType",
+              "value": "recovery",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "systemsRestored",
+              "value": 8,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "recoveryTime",
+              "value": "45s",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a91c29c7-b2ad-4e9f-8c86-3b6372fcb481",
+      "name": "Recovery Agent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -464,
+        1312
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "agentType",
+              "value": "scout",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "areasExplored",
+              "value": 23,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "discoveryRate",
+              "value": 0.87,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a453b2a3-c211-4753-aec7-941ae2c85455",
+      "name": "Scout Agent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1216,
+        992
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "agentType",
+              "value": "prediction",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "forecastAccuracy",
+              "value": 0.91,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "predictionsGenerated",
+              "value": 45,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e82d4421-8424-4d73-a7b0-0207e8d7481e",
+      "name": "Prediction Agent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1216,
+        1312
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "agentType",
+              "value": "optimization",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "improvementRate",
+              "value": 0.88,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "optimizationCycles",
+              "value": 156,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4412ec4b-dc31-48fe-a8a4-c9b2484a1e40",
+      "name": "Optimization Agent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1216,
+        1520
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "agentType",
+              "value": "evolution",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "generationNumber",
+              "value": 42,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "fitnessScore",
+              "value": 0.93,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e75567b5-814d-4cb0-a045-d0d24372c38f",
+      "name": "Evolution Agent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1216,
+        1728
+      ]
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "swarmData",
+        "options": {}
+      },
+      "id": "cb4e39f0-2829-44ea-b79d-32496c58f74a",
+      "name": "Agent Communication Hub",
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -672,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "threatProbability",
+              "value": 0.23,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "timeToThreat",
+              "value": "2h",
+              "type": "string"
+            },
+            {
+              "id": "3",
+              "name": "severity",
+              "value": "medium",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2f918f82-abf4-41b6-913d-815ebc4803e8",
+      "name": "Threat Prediction System",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -448,
+        256
+      ]
+    },
+    {
+      "parameters": {
+        "numberInputs": 5
+      },
+      "id": "c9c5c1d7-2dcb-4f15-82d8-e88b51f136d1",
+      "name": "Threat Propagation Hub",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -208,
+        768
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "behaviorPattern",
+              "value": "stable",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "deviationScore",
+              "value": 0.12,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "predictedAction",
+              "value": "maintain_course",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0fb4ded6-8055-494a-b800-4c624d2cc90c",
+      "name": "Behavioral Prediction Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -448,
+        464
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "anomaliesDetected",
+              "value": 2,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "anomalyType",
+              "value": "statistical_outlier",
+              "type": "string"
+            },
+            {
+              "id": "3",
+              "name": "confidenceLevel",
+              "value": 0.89,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5c03615c-c38d-44ba-90fc-7754709f462a",
+      "name": "Anomaly Detection Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -448,
+        672
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "riskLevel",
+              "value": "low",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "riskScore",
+              "value": 0.18,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "mitigationStrategy",
+              "value": "proactive_monitoring",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "74f4b312-b2eb-45a8-9fed-b3494119b960",
+      "name": "Future Risk Analyzer",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -464,
+        848
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "escalationLevel",
+              "value": 1,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "alertsSent",
+              "value": 5,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "responseTeam",
+              "value": "tier1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bad464ee-7170-4bfe-9e28-3b5c4d006f96",
+      "name": "Threat Escalation Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -448,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "memoryType",
+              "value": "short_term",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "capacity",
+              "value": 100,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "retentionTime",
+              "value": "5m",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8c8b2f6a-8a5a-4429-ad74-ee566c244e1c",
+      "name": "Short-Term Memory",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        96
+      ]
+    },
+    {
+      "parameters": {
+        "numberInputs": 8
+      },
+      "id": "669847f9-2efe-46bc-aa6e-1a1c052cee0f",
+      "name": "Memory Evolution Hub",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        224,
+        752
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "memoryType",
+              "value": "long_term",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "storageSize",
+              "value": 10000,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "compressionRatio",
+              "value": 0.65,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "14aeac6d-0257-4ad6-a76b-16f113567bb8",
+      "name": "Long-Term Memory",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        288
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "memoryType",
+              "value": "behavioral",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "patternsStored",
+              "value": 456,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "recallAccuracy",
+              "value": 0.94,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2775cd55-f303-41b7-95c1-244aeedcff91",
+      "name": "Behavioral Memory",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "memoryType",
+              "value": "evolution",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "generationsStored",
+              "value": 42,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "mutationHistory",
+              "value": "tracked",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d92ba305-5f05-4c03-9d17-4d0f4dc853a2",
+      "name": "Evolution Memory",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        704
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "memoryType",
+              "value": "shared_swarm",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "agentsConnected",
+              "value": 8,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "syncFrequency",
+              "value": "100ms",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4bc2e0b8-d9ce-4931-b8ab-a2c1fbc2290e",
+      "name": "Shared Swarm Memory",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        912
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "learningRate",
+              "value": 0.001,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "epochsCompleted",
+              "value": 1250,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "accuracy",
+              "value": 0.96,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0fd21440-cfbe-4cf2-a23d-be826ae37710",
+      "name": "Learning Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        1104
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "mutationRate",
+              "value": 0.05,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "successfulMutations",
+              "value": 23,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "adaptationSpeed",
+              "value": "fast",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ab4be987-193b-4a48-b7c7-9358cf8761b0",
+      "name": "Adaptive Mutation Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        1296
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "weightMatrix",
+              "value": "optimized",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "convergenceRate",
+              "value": 0.87,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "stabilityScore",
+              "value": 0.92,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4d24ef59-54f8-48d8-a42d-8f24291ee65c",
+      "name": "Weight Evolution System",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        1504
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "healingStatus",
+              "value": "active",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "repairsCompleted",
+              "value": 15,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "systemHealth",
+              "value": 0.98,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bae898f8-60df-4dd4-824b-bf8a7cbe2a08",
+      "name": "Self-Healing Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        512,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "numberInputs": 6
+      },
+      "id": "703f1f57-42a0-48fd-a71d-91a8e0a617cd",
+      "name": "Adaptive Infrastructure Hub",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        784,
+        768
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "allocationMode",
+              "value": "dynamic",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "utilizationRate",
+              "value": 0.82,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "rebalanceCount",
+              "value": 34,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8afd20c0-4fb8-4e69-81cd-46a3d2a9adf8",
+      "name": "Resource Allocator",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        512,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "distributionStrategy",
+              "value": "load_balanced",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "tasksDistributed",
+              "value": 892,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "efficiency",
+              "value": 0.94,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c15d1e23-eb27-4dff-9a33-f23bb6d0eee3",
+      "name": "Task Distribution Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        512,
+        752
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "energyMode",
+              "value": "efficient",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "powerSaved",
+              "value": 23.5,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "optimizationLevel",
+              "value": 0.89,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2e6fa967-4767-46ed-a310-08b7b1d3ccb1",
+      "name": "Energy Optimization Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        512,
+        976
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "scalingMode",
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "currentScale",
+              "value": 8,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "targetScale",
+              "value": 10,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0a1c28bb-b01c-4075-bdd2-02764b8fa21e",
+      "name": "Dynamic Scaling System",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        512,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "topology",
+              "value": "mesh",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "nodeCount",
+              "value": 64,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "organizationScore",
+              "value": 0.91,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f1478640-2f2d-4de2-8250-fcc500bf1a62",
+      "name": "Self-Organizing Network",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        512,
+        1424
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "intelligenceLevel",
+              "value": "emergent",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "collectiveIQ",
+              "value": 187,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "synergy",
+              "value": 0.95,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2d562665-a40b-4c6f-94c3-edfc3b6ea649",
+      "name": "Collective Intelligence Core",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1072,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "numberInputs": 5
+      },
+      "id": "d4257c42-aa43-4104-b978-ca3717b2416f",
+      "name": "Ecosystem Coordination Hub",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1424,
+        784
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "stabilityIndex",
+              "value": 0.93,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "equilibriumState",
+              "value": "balanced",
+              "type": "string"
+            },
+            {
+              "id": "3",
+              "name": "perturbationResistance",
+              "value": 0.88,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "59fae9c3-72d5-4090-aa9d-4c663ec1a769",
+      "name": "Ecosystem Stability Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1072,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "coordinationMode",
+              "value": "distributed",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "consensusRate",
+              "value": 0.97,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "autonomyLevel",
+              "value": "high",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "260052d3-fe01-40bb-aa72-20e95a26d7b5",
+      "name": "Autonomous Coordination System",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1072,
+        832
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "syncStatus",
+              "value": "synchronized",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "clockDrift",
+              "value": 0.001,
+              "type": "number"
+            },
+            {
+              "id": "3",
+              "name": "coherenceLevel",
+              "value": 0.99,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dcd3c3e8-e7f1-4e12-80d2-13e4715041a9",
+      "name": "Global Synchronization Engine",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1072,
+        1056
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "controlMode",
+              "value": "adaptive",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "responseLatency",
+              "value": "50ms",
+              "type": "string"
+            },
+            {
+              "id": "3",
+              "name": "adaptationScore",
+              "value": 0.96,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "206464bc-2290-438b-8e14-f8f76646c0d4",
+      "name": "Adaptive Ecosystem Controller",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1072,
+        1248
+      ]
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "ecosystemState",
+        "options": {}
+      },
+      "id": "a0f70226-fdbd-4cce-8fe9-82af8b3f13c7",
+      "name": "Ecosystem Output Aggregator",
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        1824
+      ]
+    },
+    {
+      "parameters": {
+        "content": "🌍 ENVIRONMENT LAYER\nSensors & Monitors",
+        "height": 96,
+        "width": 480,
+        "color": 2
+      },
+      "id": "9766a738-8e6d-4c46-9a54-7a6b219c9781",
+      "name": "Environment Region",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -3488,
+        672
+      ]
+    },
+    {
+      "parameters": {
+        "content": "🧠 CORE INTELLIGENCE\nDecision & Analysis",
+        "height": 128,
+        "width": 480,
+        "color": 3
+      },
+      "id": "8a388bbc-8738-48fd-ad79-6f6daa3eb0ca",
+      "name": "Intelligence Region",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -3488,
+        1328
+      ]
+    },
+    {
+      "parameters": {
+        "content": "🐝 SWARM LAYER\nAutonomous Agents",
+        "height": 128,
+        "width": 480,
+        "color": 4
+      },
+      "id": "573b0d4a-67b6-41aa-b3db-8326491126c3",
+      "name": "Swarm Region",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -3488,
+        928
+      ]
+    },
+    {
+      "parameters": {
+        "content": "⚙️ INFRASTRUCTURE\nSelf-Healing & Scaling",
+        "height": 96,
+        "width": 480,
+        "color": 7
+      },
+      "id": "29006a37-f9c1-4d0b-813b-18edc0c0323e",
+      "name": "Infrastructure Region",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -3488,
+        1216
+      ]
+    },
+    {
+      "parameters": {
+        "content": "🌌 COORDINATION LAYER\nGlobal Synchronization",
+        "height": 128,
+        "width": 480
+      },
+      "id": "8c3ad2b2-c94d-4b0e-a29c-996655c6b984",
+      "name": "Coordination Region",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -3488,
+        1472
+      ]
+    },
+    {
+      "parameters": {
+        "content": "💫 ECOSYSTEM PULSE\nContinuous Evolution Loop\n\nEnvironment → Intelligence → Swarm → Threat → Memory → Infrastructure → Coordination → Output",
+        "height": 144,
+        "width": 480,
+        "color": 2
+      },
+      "id": "1d86b4b3-cbb5-456d-9fb6-8a5a420586bc",
+      "name": "Heartbeat",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -3488,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "anomalyScore",
+              "value": 0.15,
+              "type": "number"
+            },
+            {
+              "id": "2",
+              "name": "threatLevel",
+              "value": "low",
+              "type": "string"
+            },
+            {
+              "id": "3",
+              "name": "signalCount",
+              "value": 3,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f710bae4-ba26-4b71-9abf-29bd6d95caef",
+      "name": "Threat Signal Detector",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2448,
+        1328
+      ]
+    },
+    {
+      "parameters": {
+        "content": "⚠️ THREAT LAYER\nPrediction & Detection",
+        "height": 128,
+        "width": 480,
+        "color": 5
+      },
+      "id": "780381e5-027e-453e-aee8-66967328f620",
+      "name": "Threat Region",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -3488,
+        784
+      ]
+    },
+    {
+      "parameters": {
+        "content": "🧬 MEMORY & EVOLUTION\nLearning & Adaptation",
+        "height": 128,
+        "width": 480,
+        "color": 6
+      },
+      "id": "edbccabe-5b97-42ab-8372-c7358fcb361e",
+      "name": "Memory Region",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -3488,
+        1072
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Ecosystem Activation": {
+      "main": [
+        [
+          {
+            "node": "Environment Sensor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Resource Scanner",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "CPU Monitor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Memory Monitor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Network Pressure Monitor",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Threat Signal Detector",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Environment Sensor": {
+      "main": [
+        [
+          {
+            "node": "Environment State Collector",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Environment State Collector": {
+      "main": [
+        [
+          {
+            "node": "Global Event Bus",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resource Scanner": {
+      "main": [
+        [
+          {
+            "node": "Environment State Collector",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "CPU Monitor": {
+      "main": [
+        [
+          {
+            "node": "Environment State Collector",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Memory Monitor": {
+      "main": [
+        [
+          {
+            "node": "Environment State Collector",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Network Pressure Monitor": {
+      "main": [
+        [
+          {
+            "node": "Environment State Collector",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Global Event Bus": {
+      "main": [
+        [
+          {
+            "node": "Formula Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Dynamic Decision Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Adaptive Brain",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Context Analyzer",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Resource Intelligence",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Environment Adaptive Automation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formula Engine": {
+      "main": [
+        [
+          {
+            "node": "Global State Manager",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Global State Manager": {
+      "main": [
+        [
+          {
+            "node": "Watcher Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Hunter Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Defense Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Recovery Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Scout Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Prediction Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Optimization Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Evolution Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dynamic Decision Engine": {
+      "main": [
+        [
+          {
+            "node": "Global State Manager",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Adaptive Brain": {
+      "main": [
+        [
+          {
+            "node": "Global State Manager",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Context Analyzer": {
+      "main": [
+        [
+          {
+            "node": "Global State Manager",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Resource Intelligence": {
+      "main": [
+        [
+          {
+            "node": "Global State Manager",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Environment Adaptive Automation": {
+      "main": [
+        [
+          {
+            "node": "Global State Manager",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Watcher Agent": {
+      "main": [
+        [
+          {
+            "node": "Swarm Coordinator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Swarm Coordinator": {
+      "main": [
+        [
+          {
+            "node": "Agent Communication Hub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hunter Agent": {
+      "main": [
+        [
+          {
+            "node": "Swarm Coordinator",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Defense Agent": {
+      "main": [
+        [
+          {
+            "node": "Swarm Coordinator",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Recovery Agent": {
+      "main": [
+        [
+          {
+            "node": "Swarm Coordinator",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Scout Agent": {
+      "main": [
+        [
+          {
+            "node": "Swarm Coordinator",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Prediction Agent": {
+      "main": [
+        [
+          {
+            "node": "Swarm Coordinator",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Optimization Agent": {
+      "main": [
+        [
+          {
+            "node": "Swarm Coordinator",
+            "type": "main",
+            "index": 6
+          }
+        ]
+      ]
+    },
+    "Evolution Agent": {
+      "main": [
+        [
+          {
+            "node": "Swarm Coordinator",
+            "type": "main",
+            "index": 7
+          }
+        ]
+      ]
+    },
+    "Agent Communication Hub": {
+      "main": [
+        [
+          {
+            "node": "Threat Prediction System",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Behavioral Prediction Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Anomaly Detection Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Threat Escalation Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Future Risk Analyzer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Threat Prediction System": {
+      "main": [
+        [
+          {
+            "node": "Threat Propagation Hub",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Defense Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Threat Propagation Hub": {
+      "main": [
+        [
+          {
+            "node": "Short-Term Memory",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Long-Term Memory",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Behavioral Memory",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Evolution Memory",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Shared Swarm Memory",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Learning Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Adaptive Mutation Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Weight Evolution System",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Behavioral Prediction Engine": {
+      "main": [
+        [
+          {
+            "node": "Threat Propagation Hub",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Anomaly Detection Engine": {
+      "main": [
+        [
+          {
+            "node": "Threat Propagation Hub",
+            "type": "main",
+            "index": 2
+          },
+          {
+            "node": "Recovery Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Future Risk Analyzer": {
+      "main": [
+        [
+          {
+            "node": "Threat Propagation Hub",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Threat Escalation Engine": {
+      "main": [
+        [
+          {
+            "node": "Threat Propagation Hub",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Short-Term Memory": {
+      "main": [
+        [
+          {
+            "node": "Memory Evolution Hub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Memory Evolution Hub": {
+      "main": [
+        [
+          {
+            "node": "Self-Healing Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Resource Allocator",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Task Distribution Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Energy Optimization Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Dynamic Scaling System",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Self-Organizing Network",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Long-Term Memory": {
+      "main": [
+        [
+          {
+            "node": "Memory Evolution Hub",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Behavioral Memory": {
+      "main": [
+        [
+          {
+            "node": "Memory Evolution Hub",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Evolution Memory": {
+      "main": [
+        [
+          {
+            "node": "Memory Evolution Hub",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Shared Swarm Memory": {
+      "main": [
+        [
+          {
+            "node": "Memory Evolution Hub",
+            "type": "main",
+            "index": 4
+          },
+          {
+            "node": "Swarm Coordinator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Learning Engine": {
+      "main": [
+        [
+          {
+            "node": "Memory Evolution Hub",
+            "type": "main",
+            "index": 5
+          },
+          {
+            "node": "Formula Engine",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Adaptive Mutation Engine": {
+      "main": [
+        [
+          {
+            "node": "Memory Evolution Hub",
+            "type": "main",
+            "index": 6
+          },
+          {
+            "node": "Adaptive Brain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Weight Evolution System": {
+      "main": [
+        [
+          {
+            "node": "Memory Evolution Hub",
+            "type": "main",
+            "index": 7
+          },
+          {
+            "node": "Dynamic Decision Engine",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Self-Healing Engine": {
+      "main": [
+        [
+          {
+            "node": "Adaptive Infrastructure Hub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Adaptive Infrastructure Hub": {
+      "main": [
+        [
+          {
+            "node": "Collective Intelligence Core",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Ecosystem Stability Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Autonomous Coordination System",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Global Synchronization Engine",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Adaptive Ecosystem Controller",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resource Allocator": {
+      "main": [
+        [
+          {
+            "node": "Adaptive Infrastructure Hub",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Task Distribution Engine": {
+      "main": [
+        [
+          {
+            "node": "Adaptive Infrastructure Hub",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Energy Optimization Engine": {
+      "main": [
+        [
+          {
+            "node": "Adaptive Infrastructure Hub",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Dynamic Scaling System": {
+      "main": [
+        [
+          {
+            "node": "Adaptive Infrastructure Hub",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Self-Organizing Network": {
+      "main": [
+        [
+          {
+            "node": "Adaptive Infrastructure Hub",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Collective Intelligence Core": {
+      "main": [
+        [
+          {
+            "node": "Ecosystem Coordination Hub",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Global Event Bus",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ecosystem Coordination Hub": {
+      "main": [
+        [
+          {
+            "node": "Ecosystem Output Aggregator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ecosystem Stability Engine": {
+      "main": [
+        [
+          {
+            "node": "Ecosystem Coordination Hub",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Autonomous Coordination System": {
+      "main": [
+        [
+          {
+            "node": "Ecosystem Coordination Hub",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Global Synchronization Engine": {
+      "main": [
+        [
+          {
+            "node": "Ecosystem Coordination Hub",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Adaptive Ecosystem Controller": {
+      "main": [
+        [
+          {
+            "node": "Ecosystem Coordination Hub",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Ecosystem Output Aggregator": {
+      "main": [
+        [
+          {
+            "node": "Environment Sensor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Threat Signal Detector": {
+      "main": [
+        [
+          {
+            "node": "Environment State Collector",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "cf07ba37-6b5d-4464-8a82-840f6977f7a0",
+  "meta": {
+    "instanceId": "64abafd2403c8acf3e2385c4280593d44cd8c10b4971d3fb1b8a5262feb25031"
+  },
+  "id": "o16JFs0CJhKmG295",
+  "tags": []
+}

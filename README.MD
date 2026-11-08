@@ -1,15 +1,16 @@
-# Winter Echo-System — AI Automation Platform
+# ExpoAgentService — Customer Service AI Automation Platform
 
 ---
-Author: AK005  
-Explanation: Dromput Brain  
+Planing & DOC Author: AK Shoikat
+Explanation: Dromput Brain 
+Codebase Author : Rahad Bhuiya ( Karnel Hacker )
 Date: July 6, 2026  
 Version: 1.0.0  
 
 ---
 
 ## 1. Executive Summary
- Expo-Agent is a **blueprint-driven, multi-tenant AI automation platform** designed to unify customer communication, AI agent execution, workflow automation, knowledge management, memory, and business operations into a single extensible system. It is not a chatbot or a simple workflow tool — it is an **AI Operating System** where businesses deploy role-specific AI agents (Social Media Manager, Hotel Receptionist, Medical Receptionist, CRM Assistant, etc.) through declarative **Blueprints** executed by a shared runtime Under Exploidus.com.
+Expo-Agent is a **blueprint-driven, multi-tenant AI automation platform** designed to unify customer communication, AI agent execution, workflow automation, knowledge management, memory, and business operations into a single extensible system. It is not a chatbot or a simple workflow tool — it is an **AI Operating System** where businesses deploy role-specific AI agents (Social Media Manager, Hotel Receptionist, Medical Receptionist, CRM Assistant, etc.) through declarative **Blueprints** executed by a shared runtime Under Exploidus.com.
 
 ---
 
@@ -922,16 +923,12 @@ The following would be needed for a complete implementation picture:
 
 ## Developer Information
 
-**Project:** ExpoAgentService (Winter Ecosystem)
-**Development Status:** Planning & Documentation / Development
-**Project Framework:** Next.js
-**Project Started:** July 14, 2026
-**First Version Released:** September 12, 2026
+**Project:** ExpoAgentService (Winter Ecosystem). 
+**Development Status:** Planning & Documentation / Development. 
+**Project Framework:** Next.js.
+**Project Started:** July 14, 2026.
+**First Version Released:** September 12, 2026.
 
-### Core Developer
-**Name:** AK Shoikat
-**Codebase Development:** Karnel Hacker MD Rahadbhuiyan
-**GitHub:** [github.com/rahadbhuiya](https://github.com/rahadbhuiya)
 
 ### Project Documentation Notice
 

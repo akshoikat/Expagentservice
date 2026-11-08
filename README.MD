@@ -1,4 +1,4 @@
-# EXPLOIDUS — Blueprint-Driven AI Automation Platform
+# Winter Echo-System — AI Automation Platform
 
 ---
 Author: AK005  
@@ -9,8 +9,7 @@ Version: 1.0.0
 ---
 
 ## 1. Executive Summary
-
-EXPLOIDUS is a **blueprint-driven, multi-tenant AI automation platform** designed to unify customer communication, AI agent execution, workflow automation, knowledge management, memory, and business operations into a single extensible system. It is not a chatbot or a simple workflow tool — it is an **AI Operating System** where businesses deploy role-specific AI agents (Social Media Manager, Hotel Receptionist, Medical Receptionist, CRM Assistant, etc.) through declarative **Blueprints** executed by a shared runtime.
+ Expo-Agent is a **blueprint-driven, multi-tenant AI automation platform** designed to unify customer communication, AI agent execution, workflow automation, knowledge management, memory, and business operations into a single extensible system. It is not a chatbot or a simple workflow tool — it is an **AI Operating System** where businesses deploy role-specific AI agents (Social Media Manager, Hotel Receptionist, Medical Receptionist, CRM Assistant, etc.) through declarative **Blueprints** executed by a shared runtime Under Exploidus.com.
 
 ---
 
@@ -57,8 +56,7 @@ Businesses operating across multiple customer communication channels face a frag
 ---
 
 ## 4. Solution Overview
-
-EXPLOIDUS solves this by introducing a **Blueprint-Driven Architecture** with three fundamental separations:
+ Expo-Agent solves this by introducing a **Blueprint-Driven Architecture** with three fundamental separations:
 
 ```
 ┌─────────────────────────────────────────────────────┐
@@ -184,59 +182,6 @@ The platform's defining feature. A Blueprint is a declarative configuration cont
 - **Channel Permissions** — Which channels the agent serves
 
 ---
-
-## 7. Folder Structure Explanation
-
-### Planned Monorepo Layout
-
-```
-ai-automation-platform/
-│
-├── apps/
-│   ├── web/          Next.js Dashboard (UI)
-│   ├── api/          Fastify Backend (REST API)
-│   └── worker/       BullMQ Worker (background jobs)
-│       ├── ai/           LLM execution, summarization
-│       ├── communication/ Retry, webhook recovery
-│       ├── media/        Image/audio/document processing
-│       ├── workflow/     Delayed execution, automation
-│       ├── knowledge/    Embedding generation, indexing
-│       ├── maintenance/  Cleanup, archive, retention
-│       └── scheduler/    Cron-driven jobs
-│
-├── packages/
-│   ├── core/          Business logic (Identity, Workspace,
-│   │                  Communication, Agent, Knowledge,
-│   │                  Memory, Workflow, Administration)
-│   ├── shared/        Types, errors, utils, contracts, events
-│   ├── sdk/           Internal SDK (types shared frontend↔backend)
-│   └── config/        ESLint, TypeScript, Prettier configs
-│
-├── providers/
-│   ├── llm/           OpenAI, Claude, Gemini adapters
-│   ├── storage/       S3, MinIO, R2 adapters
-│   ├── queue/         BullMQ, Temporal adapters
-│   ├── auth/          Better Auth, Auth.js adapters
-│   ├── notification/  Email, SMS, Push adapters
-│   └── integration/   WhatsApp, Messenger, Telegram etc.
-│
-├── docs/              All project documentation
-│   ├── constitution/  Project principles, goals, scope
-│   ├── design/        PDS documents, architecture
-│   ├── domain/        Entity datasheets
-│   ├── database/      Storage architecture, migrations
-│   ├── api/           API contracts
-│   └── adr/           Architecture Decision Records
-│
-├── docker/
-│   ├── development/   Docker Compose for local dev
-│   └── production/    Docker Compose for production
-│
-├── scripts/           Helper scripts
-├── tools/             Internal CLI, generators, seeders
-├── .github/           CI/CD workflows
-└── .vscode/           Editor settings
-```
 
 ### Architecture Pattern
 
@@ -940,7 +885,7 @@ graph TD
 
 ### Evidence File Index
 
-All source documentation resides in `adaptive intelligence system/EXPLOIDUS/Story/`:
+All source documentation resides in `adaptive intelligence system Expo-Agent/Story/`:
 
 | Path | Content |
 |---|---|
@@ -965,7 +910,7 @@ All source documentation resides in `adaptive intelligence system/EXPLOIDUS/Stor
 | `PDS/PDS Rule-001.md` | Technology replaceability rule |
 | `domain/aggregates/workspace.md` | Aggregate datasheet (stub) |
 
-### Missing Information
+<!-- ### Missing Information
 
 The following would be needed for a complete implementation picture:
 1. **Database schema** (Prisma models or SQL DDL)
@@ -973,6 +918,21 @@ The following would be needed for a complete implementation picture:
 3. **UI component tree** (React component files)
 4. **Test files** (Vitest / Playwright specs)
 5. **Docker Compose files** (docker-compose.yml)
-6. **CI/CD configuration** (.github/workflows)
+6. **CI/CD configuration** (.github/workflows) -->
 
-These do not exist yet because the project is still in the planning/documentation phase.
+## Developer Information
+
+**Project:** ExpoAgentService (Winter Ecosystem)
+**Development Status:** Planning & Documentation / Development
+**Project Framework:** Next.js
+**Project Started:** July 14, 2026
+**First Version Released:** September 12, 2026
+
+### Core Developer
+**Name:** AK Shoikat
+**Codebase Development:** Karnel Hacker MD Rahadbhuiyan
+**GitHub:** [github.com/rahadbhuiya](https://github.com/rahadbhuiya)
+
+### Project Documentation Notice
+
+Some system components, modules, and technical implementations are not yet available because the project is currently in its planning and documentation phase. This section provides the developer information and project background for the Exploidus Channel.

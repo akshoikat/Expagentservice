@@ -1,4 +1,4 @@
-# ExpoAgentService — Customer Service AI Automation Platform
+# ExpAgentService — Customer Service AI Automation Platform
 
 ---
 Planing & DOC Author: AK Shoikat
@@ -10,7 +10,7 @@ Version: 1.0.0
 ---
 
 ## 1. Executive Summary
-Expo-Agent is a **blueprint-driven, multi-tenant AI automation platform** designed to unify customer communication, AI agent execution, workflow automation, knowledge management, memory, and business operations into a single extensible system. It is not a chatbot or a simple workflow tool — it is an **AI Operating System** where businesses deploy role-specific AI agents (Social Media Manager, Hotel Receptionist, Medical Receptionist, CRM Assistant, etc.) through declarative **Blueprints** executed by a shared runtime Under Exploidus.com.
+Exp-Agent is a **blueprint-driven, multi-tenant AI automation platform** designed to unify customer communication, AI agent execution, workflow automation, knowledge management, memory, and business operations into a single extensible system. It is not a chatbot or a simple workflow tool — it is an **AI Operating System** where businesses deploy role-specific AI agents (Social Media Manager, Hotel Receptionist, Medical Receptionist, CRM Assistant, etc.) through declarative **Blueprints** executed by a shared runtime Under Exploidus.com.
 
 ---
 
